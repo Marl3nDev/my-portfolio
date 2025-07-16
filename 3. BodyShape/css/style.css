@@ -1,0 +1,467 @@
+@import "./../fonts/bebasneue/bebasneue.css";
+@import "./../fonts/roboto/roboto.css";
+
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+li {
+    list-style: none;
+}
+
+
+.text {
+    max-width: 800px;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.title {
+    font-size: 96px;
+    letter-spacing: 0.08em;
+    color: #FFD479;
+}
+
+.desc {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    line-height: 2;
+    color: #FAFAF5;
+}
+
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 35px 30px;
+    margin-top: 50px;
+}
+
+
+
+body {
+    background-color: #1F2A32;
+    font-family: 'Bebas Neue', sans-serif;
+    font-weight: 700;
+}
+
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/* Header */
+
+.header__wrapper {
+    position: relative;
+    z-index: 100;
+    
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-top: 32px; 
+}
+
+.header__logo-img {
+    height: 81px;
+}
+
+.header__items {
+    display: flex;
+    gap: 50px;
+    color: #FFF;
+    height: 30px;
+}
+
+.header__item-link {
+    text-transform: uppercase;
+    letter-spacing: 3px;
+
+    transition: color 0.3s;
+}
+
+.header__item-link:hover {
+    color: #FFD479;
+}
+
+/* Hero */
+
+.hero {
+    background-image: image-set(
+        url(./../image/hero/hero-bg.jpg) 1x,
+        url(./../image/hero/hero-bg@2x.jpg) 2x
+    );
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top left;
+
+    height: 750px;
+    margin-top: -117px;
+    text-align: right;
+}
+
+.hero__logo {
+    margin-top: 236px;
+}
+
+/* Trainers */
+
+.trainers {
+    margin: 150px 0;
+}
+
+.trainer__card {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px 0 rgba(0, 0, 0, 0.2);
+}
+
+.trainer__card::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.trainer__card:hover::after {
+    opacity: 1;
+}
+
+.trainer__card-img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.trainer__card-name {
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+    color: #FFF;
+    font-size: 42px;
+    opacity: 0;
+    z-index: 2;
+    transition: all 0.3s ease-in-out;
+    text-align: center;
+}
+
+.trainer__card:hover .trainer__card-name {
+    opacity: 1;
+    top: 50%;
+}
+
+/* Beast */
+
+.beast {
+    background-image: image-set(
+        url(./../image/beast/beast-bg.jpg) 1x,
+        url(./../image/beast/beast-bg@2x.jpg) 2x
+    );
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top center;
+
+    height: 750px;
+    margin-bottom: 150px;
+
+    clip-path: polygon(0% 10%, 100% 0%, 100% 90%, 0% 100%);
+}
+
+.beast__text {
+    padding-top: 245px;
+}
+
+.beast__title {
+    font-size: 75px;
+    letter-spacing: 0.1em;
+    color: #FFF;
+    margin-bottom: 10px;
+
+    text-shadow: 0 4px 7px 0 rgba(0, 0, 0, 0.1);
+}
+
+.beast__desc {
+    font-family: 'Roboto', sans-serif;
+    font-size: 22px;
+    font-weight: 300;
+    line-height: 150%;
+    color: #FFF;
+    margin-bottom: 30px;
+
+    text-shadow: 0 4px 7px 0 rgba(0, 0, 0, 0.1);
+}
+
+.btn {
+    padding: 16px 46px;
+    background-color: #FFD479;
+    border-radius: 7px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+
+    font-family: 'Bebas Neue', sans-serif;
+    font-weight: 700;
+    font-size: 19px;
+    letter-spacing: 0.26em;
+    color: #000;
+}
+
+.btn:hover {
+    background-color: #af8d42;
+}
+
+/* Programs */
+
+.programs {
+    margin-bottom: 150px;
+}
+
+.programs__text {
+    max-width: 550px;
+}
+
+.programs__cards {
+    gap: 105px 32px;
+}
+
+.program__card {
+    transition: all 0.3s;
+}
+
+.program__card-img-wrapper {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+
+    margin-bottom: 25px;
+}
+
+.program__card-img-wrapper::after{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.program__card:hover .program__card-img-wrapper::after {
+    opacity: 1;
+}
+
+.program__card-title {
+    font-size: 43px;
+    color: #FFD479;
+    letter-spacing: 0.07em;
+
+    transition: color 0.3s;
+}
+
+.program__card:hover .program__card-title {
+    color: #af8d42;
+}
+
+/* Contact */
+
+.contact {
+    padding-top: 150px;
+    background-image: image-set(
+        url(./../image/contacts/contact-form-bg.jpg) 1x,
+        url(./../image/contacts/contact-form-bg@2x.jpg) 2x
+    );
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 860px;
+}
+
+.contact__wrapper {
+    margin: 0 auto;
+    max-width: 585px;
+}
+.contact__title {
+    font-size: 70px;
+    letter-spacing: 0.06em;
+    color: #FFD479;
+    margin-bottom: 40px;
+}
+
+.form__group {
+    display: flex;
+    flex-direction: column;
+
+    margin-bottom: 30px;
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.form-label {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    color: #FFF;
+    margin-bottom: 5px;
+}
+
+.form-input {
+    background-color: inherit;
+    border: none;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    color: #FFF;
+}
+
+.form-input:focus {
+    outline: none;
+    border: none;
+}
+
+.form-input::placeholder {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    color: #FFF;
+}
+
+.form-textarea {
+    background-color: inherit;
+    max-width: 100%;
+    min-height: 170px;
+
+    resize: none;
+    overflow: hidden;
+
+    color: #FFF;
+    border: none;
+}
+
+.form-textarea:focus {
+    outline: none;
+    border: none;
+}
+
+.form-textarea::placeholder {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    color: #FFF;
+}
+
+/* Footer */
+
+.footer {
+    padding: 70px 0;
+}
+
+.footer__social {
+    margin-bottom: 30px;
+}
+
+.footer__social-link + .footer__social-link {
+    margin-left: 50px;
+}
+
+.footer__contacts {
+    display: flex;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 2;
+    color: #FAFAF5;
+}
+
+.footer__contacts-address {
+    max-width: 242px;
+    width: 100%;
+}
+
+.footer__contacts-info {
+    margin-left: 50px;
+}
+
+@media (max-width: 800px) {
+    .header__wrapper {
+        justify-content: center;
+    }
+
+    .header__logo-link{
+        display: none;
+    }
+
+    .hero {
+        text-align: center;
+    }
+    
+    .cards{
+        justify-content: center;
+    }
+
+    .program__card-title {
+        text-align: center;
+    }
+
+    .footer__social {
+        text-align: center;
+    }
+
+    .footer__contacts{
+        justify-content: center;
+    }
+}
+
+@media (max-width: 600px) {
+    .hero {
+        min-height: 750px;
+        margin-top: -185px;
+        padding-bottom: 60px;
+    }
+    .header__wrapper{
+        flex-direction: column;
+        gap: 40px 0;
+    }
+
+    .header__logo-link {
+        display: block;
+    }
+
+    .header__items{
+        flex-direction: column;
+        gap: 30px 0;
+    }
+
+    .hero img{
+        display: none;
+    }
+    
+    .trainers__title{
+        font-size: 70px;
+    }
+
+    .beast__title {
+        font-size: 65px;
+    }
+
+    .beast__desc {
+        font-size: 16px;
+    }
+}
